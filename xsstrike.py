@@ -142,11 +142,12 @@ elif jsonData:
     headers['Content-type'] = 'application/json'
     paramData = converter(paramData)
 
-if args_file:
-    if args_file == 'default':
-        payloadList = core.config.payloads
-    else:
-        payloadList = list(filter(None, reader(args_file)))
+if args_file == 'default':
+    payloadList = core.config.payloads
+    
+    
+else:
+     payloadList = list(filter(None, reader(args_file)))
 
 seedList = []
 if args_seeds:
